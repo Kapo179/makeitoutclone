@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@1&display=swap');
+
+/* Assuming Batuphat & Batuphat Extrude are custom fonts, add this */
+@font-face {
+  font-family: 'Batuphat';
+  src: url('/fonts/Batuphat-Regular.woff2') format('woff2'), /* Update with correct file */
+       url('/fonts/Batuphat-Regular.woff') format('woff');    /* Update with correct file */
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Batuphat Extrude';
+  src: url('/fonts/Batuphat-Extrude1.woff2') format('woff2'), /* Update with correct file */
+       url('/fonts/Batuphat-Extrude1.woff') format('woff');   /* Update with correct file */
+  font-weight: 400;
+}
+
+
+:root {
+  --background: #0a0a0a; /* Dark gray */
+  --foreground: #ffffff;
+  --button-gradient: linear-gradient(90deg, #ff007f, #d12f8f);
+  --button-hover-gradient: linear-gradient(90deg, #e6006f, #c1227b);
+  /* Remove or comment out this gradient to prevent it from applying */
+  /* --subtle-bg: radial-gradient(circle at 50% 0%, rgba(255, 0, 128, 0.1), rgba(0, 0, 0, 0) 70%); */
+}
+
+html body {
+  color: var(--foreground);
+  background: #000000 !important; /* Force black background */
+  font-family: 'IM Fell French Canon', serif;
+  font-style: italic;
+}
+
+
+
+.main-header {
+  margin-top: 2rem; /* Add space between cards and the header */
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+p, input, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+
+
+button, input::placeholder {
+  font-family: 'Poppins', sans-serif;
+}
+
+.description {
+  font-family: 'IM Fell French Canon', serif;
+  font-style: italic;
+}
+
+
+button:hover, a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 0, 127, 0.3); /* Subtle shadow on hover */
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+
+
+.card {
+  background-color: #222;
+  border-radius: 12px;
+  padding: .5rem; /* Increase padding to match larger size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bigger shadow for larger cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card:hover {
+  transform: scale(1.08); /* Slightly larger hover scale */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5); /* Stronger shadow effect */
+}
+
+
+footer, header {
+  border: none;
+  background: none;
+}
+
+.join-room {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff80ab;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.join-room:hover {
+  background-color: #ff007f;
+}
+
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #aaa;
+}
+
