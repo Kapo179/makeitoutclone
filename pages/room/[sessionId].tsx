@@ -89,15 +89,8 @@ export default function Room() {
       <h1 className="room-header">Room Code: {sessionId}</h1>
       <div className="space-y-6">
         <h2 className="country-selection-title">Select Your Country</h2>
-        <div className="country-container">
-          {countries.map(({ name, flag }) => (
-            <div key={name} className={`country-card ${selectedCountry === name ? 'selected' : ''}`}>
-              <button onClick={() => handleSelectCountry(name)}>
-              <img src={flag} className="country-image" />
-              </button>
-            </div>
-          ))}
-        </div>
+        
+        {/* Show Confirm Button only after a country is selected */}
         {selectedCountry && !confirmed && (
           <button
             onClick={handleConfirmSelection}
@@ -106,6 +99,17 @@ export default function Room() {
             Confirm Selection
           </button>
         )}
+        
+        <div className="country-container">
+          {countries.map(({ name, flag }) => (
+            <div key={name} className={`country-card ${selectedCountry === name ? 'selected' : ''}`}>
+              <button onClick={() => handleSelectCountry(name)}>
+                <img src={flag} className="country-image" />
+              </button>
+            </div>
+          ))}
+        </div>
+        
         {confirmed && (
           <p className="confirmed-message">Selection Confirmed: {selectedCountry}</p>
         )}
